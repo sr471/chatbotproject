@@ -14,18 +14,28 @@ function returnTime(){
 
 
 var questions = {
-	"hi": ["Hi!", "Hello", "Bonjor","Nǐ hǎo", "Ciao", "Hallo"],
-	"hello": ["Hi!", "Hello", "Bonjor","Nǐ hǎo", "Ciao", "Hallo"],
+	"hi": ["Hi!", "Hello", "Bonjor","Nǐ hǎo", "Ciao", "Hallo", "σ(≧ε≦ｏ)"],
+	"hello": ["Hi!", "Hello", "Bonjor","Nǐ hǎo", "Ciao", "Hallo", "σ(≧ε≦ｏ)"],
+	"hola": ["Hi!", "Hello", "Bonjor","Nǐ hǎo", "Ciao", "Hallo", "σ(≧ε≦ｏ)"],
 	"how are you": ["Good"],
 	"how are you?": ["Good"],
 	"what's the weather": ["Look out a window."],
-	"how was your day": ["so-so"],
+	"what's the weather?": ["Look out a window."],
+	"how was your day": ["so-so", "diva-tastic"],
+	"how was your day?": ["so-so", "diva-tasic"],
+	"what is your name": ["I am the one and only amazingly fabulous beautiful Diva σ(≧ε≦ｏ)"],
+	"what is your name?": ["I am the one and only amazingly fabulous beautiful Diva σ(≧ε≦ｏ)"],
 	"what time is it": [returnTime()],
-	"what time is it?": [returnTime()]
-
+	"what time is it?": [returnTime()],
+	"what is the date":["Today is the day after yesterday", "Today is the day before tomorrow"],
+	"what is the date?":["Today is the day after yesterday", "Today is the day before tomorrow"],
+	"do you have any pets":["This is my dog Paco the Taco -> (❍ᴥ❍ʋ)"],
+	"do you have any pets?":["This is my dog Paco the Taco -> (❍ᴥ❍ʋ)"],
+	"are we friends":["This is my monkey friend Lolo -> @( o･ｪ･)@"],
+	"are we friends":["This is my monkey friend Lolo -> @( o･ｪ･)@"]
 
 }
-var unknown =["What?", "I don't speak stupid"];
+var unknown =["What?", "I don't speak stupid.", "I don't understand."];
 
 
 
@@ -37,15 +47,15 @@ function speak()
 	var boxContent = $("#chat-area").html();
 
 	if( questions[userInput] == undefined){
-	 document.getElementById("chat-area").innerHTML += "You: " + userInput + "<br>";
-	var	response = "Chatbox: " + unknown[Math.floor((Math.random() * unknown.length))] + "<br>";
+	 document.getElementById("chat-area").innerHTML += "other: " + userInput + "<br>";
+	var	response = "Diva: " + unknown[Math.floor((Math.random() * unknown.length))] + "<br>";
 	}
 
 	else{
  document.getElementById("chat-area").innerHTML += "You: " + userInput + "<br>";
   console.log("bruh");
 	var match = questions[userInput];
-  var response = "Chatbox: " + match[Math.floor((Math.random() * match.length))] + "<br>";
+  var response = "Diva: " + match[Math.floor((Math.random() * match.length))] + "<br>";
 }
 
   $("#chat-area").append(response);
