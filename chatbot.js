@@ -6,44 +6,53 @@ function enter(event){
 	}
 }
 
-var reHi = ["hi", "hello", "Bonjor","Nǐ hǎo", "Ciao", "Hallo"];
+function returnTime(){
+	var now = new Date(Date.now());
+	return now;
+}
+
 
 
 var questions = {
-	"hi": ["Hi!", "hello", "Bonjor","Nǐ hǎo", "Ciao", "Hallo"],
-	"how are you": "Good",
-	"what's the weather": "sun",
-	"how was your day": "so-so",
-	"what time is it": "It is " + timeJR,
-	
+	"hi": ["Hi!", "Hello", "Bonjor","Nǐ hǎo", "Ciao", "Hallo"],
+	"hello": ["Hi!", "Hello", "Bonjor","Nǐ hǎo", "Ciao", "Hallo"],
+	"how are you": ["Good"],
+	"how are you?": ["Good"],
+	"what's the weather": ["Look out a window."],
+	"how was your day": ["so-so"],
+	"what time is it": [returnTime()],
+	"what time is it?": [returnTime()]
+
 
 }
 var unknown =["What?", "I don't speak stupid"];
 
 
+
 function speak()
 {
+
 	var userInput = $("#input").val();
+	userInput = userInput.toLowerCase();
 	var boxContent = $("#chat-area").html();
 
 	if( questions[userInput] == undefined){
-	 document.getElementById("chat-area").innerHTML += userInput + "<br>";
-	var	response = unknown[Math.floor((Math.random() * unknown.length))] + "<br>";
+	 document.getElementById("chat-area").innerHTML += "You: " + userInput + "<br>";
+	var	response = "Chatbox: " + unknown[Math.floor((Math.random() * unknown.length))] + "<br>";
 	}
 
 	else{
- document.getElementById("chat-area").innerHTML += userInput + "<br>";
+ document.getElementById("chat-area").innerHTML += "You: " + userInput + "<br>";
   console.log("bruh");
 	var match = questions[userInput];
-  var response = match[Math.floor((Math.random() * match.length))] + "<br>";
+  var response = "Chatbox: " + match[Math.floor((Math.random() * match.length))] + "<br>";
 }
 
   $("#chat-area").append(response);
 
 }
 
-var date = new Date();
-var time = date.getHours();
+/*var time = date.getHours();
 var weekDay = date.getUTCDay();
 var month = date.getMonth();
 var year = date.getFullYear();
@@ -105,4 +114,4 @@ var monthConversion = {
  11: "December"
 }
 
-var otherMonth = monthConversion[month];
+var otherMonth = monthConversion[month];*/
