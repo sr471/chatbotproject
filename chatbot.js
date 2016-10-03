@@ -23,8 +23,8 @@ var questions = {
 	"what's the weather?": ["Look out a window."],
 	"how was your day": ["so-so", "diva-tastic"],
 	"how was your day?": ["so-so", "diva-tasic"],
-	"what is your name": ["I am the one and only amazingly fabulous beautiful Diva σ(≧ε≦ｏ)"],
-	"what is your name?": ["I am the one and only amazingly fabulous beautiful Diva σ(≧ε≦ｏ)"],
+	"what is your name": ["I am the one and only Juju σ(≧ε≦ｏ)"],
+	"what is your name?": ["I am the one and only Juju σ(≧ε≦ｏ)"],
 	"what time is it": [returnTime()],
 	"what time is it?": [returnTime()],
 	"what is the date":["Today is the day after yesterday", "Today is the day before tomorrow"],
@@ -35,7 +35,7 @@ var questions = {
 	"are we friends":["This is my monkey friend Lolo -> @( o･ｪ･)@"]
 
 }
-var unknown =["What?", "I don't speak stupid.", "I don't understand."];
+var unknown =["I don't know","What?", "I don't speak stupid.", "I don't understand."];
 
 
 
@@ -48,14 +48,14 @@ function speak()
 
 	if( questions[userInput] == undefined){
 	 document.getElementById("chat-area").innerHTML += "other: " + userInput + "<br>";
-	var	response = "Diva: " + unknown[Math.floor((Math.random() * unknown.length))] + "<br>";
+	var	response = "Juju: " + unknown[Math.floor((Math.random() * unknown.length))] + "<br>";
 	}
 
 	else{
  document.getElementById("chat-area").innerHTML += "You: " + userInput + "<br>";
   console.log("bruh");
 	var match = questions[userInput];
-  var response = "Diva: " + match[Math.floor((Math.random() * match.length))] + "<br>";
+  var response = "Juju: " + match[Math.floor((Math.random() * match.length))] + "<br>";
 }
 
   $("#chat-area").append(response);
